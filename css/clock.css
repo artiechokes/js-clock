@@ -157,7 +157,6 @@ ul.menu .logo img {
   animation-name: load-clock;
   bottom: 50%;
   color: #fff;
-  display: none;
   position: absolute;
   right: 50%;
   text-align: center;
@@ -256,6 +255,10 @@ footer .credits {
   position: absolute;
   text-align: center;
   width: 100vw;
+}
+
+.timer {
+  display: none;
 }
 
 .timer .input {

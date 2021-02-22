@@ -153,7 +153,6 @@ ul.menu {
       animation-name: load-clock;
       bottom: 50%;
       color: $white;
-      display: none;
       position: absolute;
       right: 50%;
       text-align: center;
@@ -250,6 +249,7 @@ footer {
 }
 
  .timer {
+   display: none;
    .input {
       background: $overlay;
       border: 0;
