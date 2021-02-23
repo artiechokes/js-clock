@@ -42,3 +42,5 @@ function getInputValue() {
    // Displaying the value
    alert(`${timerHours}:${timerMinutes}:${timerSeconds}`);
 }
+
+console.log("banana");

@@ -218,6 +218,7 @@ ul.menu .logo img {
   position: absolute;
   right: 5px;
   text-align: right;
+  display: none;
 }
 
 .mini-clock p {
@@ -242,6 +243,22 @@ ul.menu .logo img {
   text-align: right;
 }
 
+.timer {
+  display: none;
+}
+
+.timer .input {
+  background: rgba(0, 0, 0, 0.4);
+  border: 0;
+  border-radius: 3px;
+  color: #fff;
+  font-size: 9vh;
+  font-weight: 700;
+  margin: 5px;
+  text-align: center;
+  width: 12vh;
+}
+
 footer {
   height: 80px;
   position: relative;
@@ -257,19 +274,19 @@ footer .credits {
   width: 100vw;
 }
 
-.timer {
-  display: none;
+footer .main-links {
+  bottom: 0;
+  color: #fff;
+  max-width: 100%;
+  padding: 20px;
+  position: absolute;
+  text-align: left;
+  width: 100vw;
 }
 
-.timer .input {
-  background: rgba(0, 0, 0, 0.4);
-  border: 0;
-  border-radius: 3px;
+footer .main-links a {
+  padding: 0 20px;
   color: #fff;
-  font-size: 9vh;
-  font-weight: 700;
-  margin: 5px;
-  text-align: center;
-  width: 12vh;
+  text-decoration: none;
 }
 /*# sourceMappingURL=clock.css.map */
