@@ -113,14 +113,14 @@ var x = setInterval(function clock() {
 
 //Menu Selection
 
-var divs = ['clock', 'timer', 'stopwatch', 'alarm'];
-var visibleDivId = null;
+var timeMenuDiv = ['clock', 'timer', 'stopwatch', 'alarm'];
+var visibleTimeId = null;
 
 function divVisibility(divId) {
-   if (visibleDivId === divId) {
-      visibleDivId = divId;
+   if (visibleTimeId === divId) {
+      visibleTimeId = divId;
    } else {
-      visibleDivId = divId;
+      visibleTimeId = divId;
    }
    hideNonVisibleDivs();
 }
@@ -130,10 +130,10 @@ function hideNonVisibleDivs() {
    var i, divId, div;
 
 
-   for (i = 0; i < divs.length; i++) {
-      divId = divs[i];
+   for (i = 0; i < timeMenuDiv.length; i++) {
+      divId = timeMenuDiv[i];
       div = document.getElementById(divId);
-      if (visibleDivId === divId) {
+      if (visibleTimeId === divId) {
          div.style.display = "block";
          div.style.animationDuration = "1s";
 
@@ -141,7 +141,7 @@ function hideNonVisibleDivs() {
          div.style.display = "none";
       }
    }
-   if (visibleDivId !== 'clock') {
+   if (visibleTimeId !== 'clock') {
       miniClock.style.display = "block";
    } else {
       miniClock.style.display = "none";
