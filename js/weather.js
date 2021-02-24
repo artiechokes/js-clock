@@ -1,6 +1,6 @@
-/*jshint esversion: 6*/
+/* jshint esversion: 6 */
 
-//weather
+// weather
 window.addEventListener('load', () => {
    if (navigator.geolocation) {
       navigator.geolocation.getCurrentPosition(position => {

@@ -1,6 +1,6 @@
 $guide: #f00;
 $selected: #555;
-$newColor: #bbee02;
+$new-color: #bbee02;
 $black: #000;
 $white: #fff;
 $mint: #a0ecd0;
@@ -9,6 +9,7 @@ $overlay: rgba(0, 0, 0 , .4);
 $paradise: #ee4266; /*Themes*/
 $night: linear-gradient(0deg, rgba(2, 0, 36, 1) 0%, rgba(9, 9, 121, 1) 35%, rgba(0, 212, 255, 1) 100%); // sass-lint:disable-line no-color-literals
 $day: linear-gradient(0deg, #f12711, #f5af19); // sass-lint:disable-line no-color-literals
+
 
 * {
    box-sizing: border-box;
@@ -24,8 +25,9 @@ body {
    max-height: 100%;
    max-width: 100%;
 }
+
 b {
-   color: $newColor;
+   color: $new-color;
 }
 @-webkit-keyframes navbar {
    0% {
@@ -226,7 +228,7 @@ ul.menu {
    position: absolute;
    right: 20px;
    top: 10px;
-
+   
    p {
       margin: 0;
       text-align: right;
@@ -236,7 +238,7 @@ ul.menu {
 footer {
    height: 80px;
    position: relative;
-
+   
    .credits {
       bottom: 0;
       color: $white;
@@ -248,8 +250,9 @@ footer {
    }
 }
 
- .timer {
+.timer {
    display: none;
+
    .input {
       background: $overlay;
       border: 0;
@@ -261,4 +264,5 @@ footer {
       text-align: center;
       width: 12vh;
    }
+
 }
