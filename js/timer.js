@@ -1,13 +1,11 @@
 /* jshint esversion: 6 */
 
-var timerHours = document.querySelector('.hours-timer');
-var timerMinutes = document.querySelector('.minutes-timer');
-var timerSeconds = document.querySelector('.seconds-timer');
-
+const timerHours = document.querySelector('.hours-timer');
+const timerMinutes = document.querySelector('.minutes-timer');
+const timerSeconds = document.querySelector('.seconds-timer');
 
 const submitTimer = document.getElementById('form');
 const cancelTimer = document.getElementById('cancel');
-
 
 window.addEventListener('load', () => {
    timerHours.setAttribute('name', 'fhours-timer');
@@ -32,13 +30,13 @@ window.addEventListener('load', () => {
    timerSeconds.setAttribute('value', '00');
 });
 
-
 function getInputValue() {
    // Selecting the input element and get its value
-   timerHours = timerHours.value;
-   timerMinutes = timerMinutes.value;
-   timerSeconds = timerSeconds.value;
+  //  timerHours = timerHours.value;
+   // timerMinutes = timerMinutes.value;
+   // timerSeconds = timerSeconds.value;
 
    // Displaying the value
-   alert(`${timerHours}:${timerMinutes}:${timerSeconds}`);
+   alert(`${timerHours.value}:${timerMinutes.value}:${timerSeconds.value}`);
+   console.lo
 }
