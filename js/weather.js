@@ -31,11 +31,13 @@ window.addEventListener('load', () => {
                   .then(weather => {
                      // console.log(weather);
 
-                     const { temperature, temperatureUnit } = weather.properties.periods[0];
+                     const { temperature, temperatureUnit, shortForecast, isDaytime } = weather.properties.periods[0];
 
 
                      document.querySelector(".temperature span:first-child").innerHTML = `${temperature}&#176;`;
                      document.querySelector(".temp-unit").innerHTML = temperatureUnit;
+                     document.querySelector(".forecast").innerHTML = shortForecast;
+
 
                      let temperatureContainer = document.querySelector(".temperature-container");
 
