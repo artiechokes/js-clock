@@ -155,6 +155,7 @@ ul.menu {
       animation-name: load-clock;
       bottom: 50%;
       color: $white;
+      display: none;
       position: absolute;
       right: 50%;
       text-align: center;
@@ -265,4 +266,8 @@ footer {
       width: 12vh;
    }
 
+}
+
+.alarm {
+   display: none;
 }

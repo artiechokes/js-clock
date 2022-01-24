@@ -32,7 +32,7 @@ window.addEventListener('load', () => {
 
 function getInputValue() {
    // Selecting the input element and get its value
-  //  timerHours = timerHours.value;
+   //  timerHours = timerHours.value;
    // timerMinutes = timerMinutes.value;
    // timerSeconds = timerSeconds.value;
 

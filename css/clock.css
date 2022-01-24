@@ -157,6 +157,7 @@ ul.menu .logo img {
   animation-name: load-clock;
   bottom: 50%;
   color: #fff;
+  display: none;
   position: absolute;
   right: 50%;
   text-align: center;
@@ -271,5 +272,9 @@ footer .credits {
   margin: 5px;
   text-align: center;
   width: 12vh;
+}
+
+.alarm {
+  display: none;
 }
 /*# sourceMappingURL=clock.css.map */
