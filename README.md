@@ -8,3 +8,5 @@ Goal is for the clock to have a couple of features:
 - [ ] Countdown
 - [ ] Themes
 - [x] Local Temperature
+
+npm install eslint --save-dev to install lint

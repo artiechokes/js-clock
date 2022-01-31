@@ -7,7 +7,6 @@ window.addEventListener('load', () => {
          longitude = position.coords.longitude;
          latitude = position.coords.latitude;
          const api = `https://api.weather.gov/points/${latitude},${longitude}`;
-         let rat = "si";
 
          //console.log(latitude, longitude, api);
 
