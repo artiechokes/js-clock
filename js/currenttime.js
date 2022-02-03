@@ -82,3 +82,5 @@ document.getElementById('timer-btn').addEventListener('click', () => divVisibili
 document.getElementById('alarm-btn').addEventListener('click', () => divVisibility('alarm'));
 document.getElementById('stopwatch-btn').addEventListener('click', () => divVisibility('stopwatch'));
 document.getElementById('clock-btn').addEventListener('click', () => divVisibility('clock'));
+
+

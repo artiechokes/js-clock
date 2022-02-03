@@ -277,3 +277,50 @@ footer .credits {
 .alarm {
   display: none;
 }
+
+.theme-container {
+  position: relative;
+  text-align: center;
+  height: 100px;
+}
+
+.theme-container .theme {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  text-align: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  border: 1px solid #428378;
+  border-radius: 5px;
+  width: 150px;
+  background-color: #fff;
+}
+
+.theme-container .theme .theme-block {
+  border-radius: 5px;
+  display: inline-block;
+  width: 25px;
+  height: 25px;
+  border: 1px solid #000;
+  margin: 10px 5px;
+  -webkit-transition: all 0.2s ease;
+  transition: all 0.2s ease;
+}
+
+.theme-container .theme .theme-block:hover {
+  border: 2px solid #968aff;
+}
+
+p[soft="ice"] {
+  height: 10px;
+}
