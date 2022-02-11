@@ -1,78 +1,86 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
+	<head>
+		<meta charset="utf-8" />
+		<title>Simple Clock</title>
+		<meta
+			name="description"
+			content="A simple Javascript Clock for time keeping." />
+		<meta name="author" content="Arturo J. Laínez" />
 
-<head>
-   <meta charset="utf-8">
-   <title>Simple Clock</title>
-   <meta name="description" content="A simple Javascript Clock for time keeping.">
-   <meta name="author" content="Arturo J. Laínez">
+		<link rel="stylesheet" href="css/clock.css" type="text/css" />
+		<link rel="shortcut icon" href="img/favicon.ico" />
+	</head>
 
-   <link rel="stylesheet" href="css/clock.css" type="text/css">
-   <link rel="shortcut icon" href="img/favicon.ico">
-</head>
+	<body>
+		<nav>
+			<ul class="menu">
+				<li class="logo"><img src="img/clock.png" alt="clock icon" /></li>
+				<li class="list-item" id="clock-btn"><span>Clock</span></li>
+				<li class="list-item" id="timer-btn"><span>Timer</span></li>
+				<li class="list-item" id="stopwatch-btn"><span>Stop Watch</span></li>
+				<li class="list-item" id="alarm-btn"><span>Alarm</span></li>
+				<li class="list-item">
+					<a href="stopwatch-tut.html"><span>TUT</span></a>
+				</li>
+			</ul>
+			<div class="temperature-container">
+				<p class="temperature">
+					<span>0&deg</span> <span class="temp-unit">F</span>
+					<span class="forecast"></span>
+				</p>
+				<p class="location">
+					<span class="city">&nbsp;</span><span class="state">&nbsp;</span>
+				</p>
+			</div>
+		</nav>
+		<div class="container">
+			<div class="clock" id="clock">
+				<p class="current-time">
+					<span>&nbsp;</span><span>&nbsp;</span><span>&nbsp;</span>
+					<span>&nbsp;</span>
+				</p>
+				<p class="current-date">&nbsp;</p>
+			</div>
+			<div class="timer" id="timer">
+				<div>timer</div>
+				<input class="input hours-timer" pattern="2[0-3]|[0-1][0-9]" />
+				<input class="input minutes-timer" pattern="[0-5][0-9]" />
+				<input class="input sewconds-timer" pattern="[0-5][0-9]" />
+				<input type="submit" onclick="getInputValue()" />
+				<button id="cancel" type="reset">Cancel</button>
+				<select class="input am-pm" name="AM/PM">
+					<option value="AM">AM</option>
+					<option value="PM">PM</option>
+				</select>
+			</div>
+			<div class="stopwatch" id="stopwatch">
+				<div>stopwatch</div>
+			</div>
+			<div class="alarm" id="alarm">
+				<div>alarm for clock</div>
+			</div>
+			<div class="mini-clock" id="mini-clock">
+				<p class="current-time-small">&nbsp;</p>
+				<p class="current-date-small">&nbsp;</p>
+			</div>
+		</div>
+		<div class="theme-container">
+			<div class="theme">
+				<div class="theme-block"></div>
+				<div class="theme-block"></div>
+				<div class="theme-block"></div>
+				<div class="theme-block"></div>
+			</div>
+		</div>
 
-<body>
-   <nav>
-      <ul class="menu">
-         <li class="logo"><img src="img/clock.png" alt="clock icon"></li>
-         <li class="list-item" id="clock-btn"><span>Clock</span></li>
-         <li class="list-item" id="timer-btn"><span>Timer</span></li>
-         <li class="list-item" id="stopwatch-btn"><span>Stop Watch</span></li>
-         <li class="list-item" id="alarm-btn"><span>Alarm</span></li>
-         <li class="list-item"><a href="stopwatch-tut.html"><span>TUT</span></a></li>
-      </ul>
-      <div class="temperature-container">
-         <p class="temperature"><span>0&deg</span> <span class="temp-unit">F</span></p>
-         <p class="location"><span class="city">&nbsp;</span><span class="state">&nbsp;</span></p>
-      </div>
-   </nav>
-   <div class="container">
-      <div class="clock" id="clock">
-         <p class="current-time"><span>&nbsp;</span><span>&nbsp;</span><span>&nbsp;</span> <span>&nbsp;</span></p>
-         <p class="current-date">&nbsp;</p>
-      </div>
-      <div class="timer" id="timer">
-         <div>timer</div>
-         <input class="input hours-timer" pattern="2[0-3]|[0-1][0-9]">
-         <input class="input minutes-timer" pattern="[0-5][0-9]">
-         <input class="input seconds-timer" pattern="[0-5][0-9]">
-         <input type="submit" onclick="getInputValue()">
-         <button id="cancel" type="reset">Cancel</button>
-         <select class="input am-pm" name="AM/PM">
-            <option value="AM">AM</option>
-            <option value="PM">PM</option>
-         </select>
-      </div>
-      <div class="stopwatch" id="stopwatch">
-         <div>stopwatch</div>
-      </div>
-      <div class="alarm" id="alarm">
-         <div>alarm for clock</div>
-      </div>
-      <div class="mini-clock" id="mini-clock">
-         <p class="current-time-small">&nbsp;</p>
-         <p class="current-date-small">&nbsp;</p>
-      </div>
-   </div>
-   <div class="theme-container">
-      <div class="theme">
-         <div class="theme-block"></div>
-         <div class="theme-block"></div>
-         <div class="theme-block"></div>
-         <div class="theme-block"></div>
-      </div>
-   </div>
+		<footer>
+			<div class="credits">Created by Arturo J. Laínez</div>
+		</footer>
 
-   <footer>
-      <div class="credits">
-         Created by Arturo J. Laínez
-      </div>
-   </footer>
-
-   <script src="js/currenttime.js" charset="utf-8"></script>
-   <!--<script src="js/timer.js" charset="utf-8"></script>-->
-   <script src="js/stopwatch.js" charset="utf-8"></script>
-   <script src="js/weather.js" charset="utf-8"></script>
-</body>
-
+		<script src="js/currenttime.js" type="module" charset="utf-8"></script>
+		<!--<script src="js/timer.js" charset="utf-8"></script>-->
+		<script src="js/stopwatch.js" charset="utf-8"></script>
+		<script src="js/weather.js" charset="utf-8"></script>
+	</body>
 </html>
