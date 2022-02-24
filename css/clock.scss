@@ -11,6 +11,7 @@ $paradise: #ee4266;
 /* Themes */
 $night: linear-gradient(0deg, #020024 0%, #090979 35%, #00d4ff 100%);
 $day: linear-gradient(0deg, #f12711, #f5af19);
+$dayss: linear-gradient(0deg, rgb(241, 39, 17), rgb(245, 175, 25));
 
 @mixin centerItem {
 	left: 50%;
@@ -29,8 +30,21 @@ $day: linear-gradient(0deg, #f12711, #f5af19);
 	box-sizing: border-box;
 }
 
+@keyframes load-tab {
+	0% {
+		opacity: 0;
+	}
+
+	45% {
+		opacity: 0;
+	}
+
+	100% {
+		opacity: 1;
+	}
+}
+
 body {
-	background: $day;
 	display: flex;
 	flex-flow: column;
 	font-family: Helvetica, Arial, sans-serif;
@@ -38,6 +52,16 @@ body {
 	margin: 0;
 	max-height: 100%;
 	max-width: 100%;
+	animation-duration: 5s;
+	animation-name: load-tab;
+}
+
+.day-bgc {
+	background: $day;
+}
+
+.night-bgc {
+	background: $night;
 }
 
 b {
@@ -101,28 +125,7 @@ ul.menu {
 		}
 	}
 }
-@-webkit-keyframes load-tab {
-	from {
-		opacity: 0;
-	}
 
-	to {
-		opacity: 1;
-	}
-}
-@keyframes load-tab {
-	0% {
-		opacity: 0;
-	}
-
-	45% {
-		opacity: 0;
-	}
-
-	100% {
-		opacity: 1;
-	}
-}
 .current-time {
 	align-items: flex-start;
 	display: flex;
@@ -144,7 +147,7 @@ ul.menu {
 .alarm,
 .stopwatch,
 .timer {
-	animation-duration: 2s;
+	animation-duration: 4s;
 	animation-name: load-tab;
 }
 
@@ -154,7 +157,7 @@ ul.menu {
 	width: 100vw;
 
 	.clock {
-		animation-duration: 2s;
+		animation-duration: 4s;
 		animation-name: load-tab;
 		bottom: 50%;
 		color: $white;
@@ -182,6 +185,9 @@ ul.menu {
 }
 
 .mini-clock {
+	animation-delay: 5s;
+	animation-duration: 2s;
+	animation-name: load-tab;
 	bottom: 0;
 	color: $white;
 	padding: 20px;

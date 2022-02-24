@@ -86,6 +86,7 @@
 		"property-no-vendor-prefix": null,
 		"value-no-vendor-prefix": null,
 		"at-rule-no-vendor-prefix": null,
-		"color-function-notation": "legacy"
+		"color-function-notation": "legacy",
+		"alpha-value-notation": null
 	}
 }

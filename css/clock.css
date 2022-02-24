@@ -4,9 +4,31 @@
           box-sizing: border-box;
 }
 
+@-webkit-keyframes load-tab {
+  0% {
+    opacity: 0;
+  }
+  45% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes load-tab {
+  0% {
+    opacity: 0;
+  }
+  45% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
 body {
-  background: -webkit-gradient(linear, left bottom, left top, from(#f12711), to(#f5af19));
-  background: linear-gradient(0deg, #f12711, #f5af19);
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -19,6 +41,20 @@ body {
   margin: 0;
   max-height: 100%;
   max-width: 100%;
+  -webkit-animation-duration: 5s;
+          animation-duration: 5s;
+  -webkit-animation-name: load-tab;
+          animation-name: load-tab;
+}
+
+.day-bgc {
+  background: -webkit-gradient(linear, left bottom, left top, from(#f12711), to(#f5af19));
+  background: linear-gradient(0deg, #f12711, #f5af19);
+}
+
+.night-bgc {
+  background: -webkit-gradient(linear, left bottom, left top, from(#020024), color-stop(35%, #090979), to(#00d4ff));
+  background: linear-gradient(0deg, #020024 0%, #090979 35%, #00d4ff 100%);
 }
 
 b {
@@ -105,27 +141,6 @@ ul.menu .logo img {
   width: 30px;
 }
 
-@-webkit-keyframes load-tab {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-}
-
-@keyframes load-tab {
-  0% {
-    opacity: 0;
-  }
-  45% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
-}
-
 .current-time {
   -webkit-box-align: start;
       -ms-flex-align: start;
@@ -153,8 +168,8 @@ ul.menu .logo img {
 .alarm,
 .stopwatch,
 .timer {
-  -webkit-animation-duration: 2s;
-          animation-duration: 2s;
+  -webkit-animation-duration: 4s;
+          animation-duration: 4s;
   -webkit-animation-name: load-tab;
           animation-name: load-tab;
 }
@@ -166,8 +181,8 @@ ul.menu .logo img {
 }
 
 .container .clock {
-  -webkit-animation-duration: 2s;
-          animation-duration: 2s;
+  -webkit-animation-duration: 4s;
+          animation-duration: 4s;
   -webkit-animation-name: load-tab;
           animation-name: load-tab;
   bottom: 50%;
@@ -203,6 +218,12 @@ ul.menu .logo img {
 }
 
 .mini-clock {
+  -webkit-animation-delay: 5s;
+          animation-delay: 5s;
+  -webkit-animation-duration: 2s;
+          animation-duration: 2s;
+  -webkit-animation-name: load-tab;
+          animation-name: load-tab;
   bottom: 0;
   color: #fff;
   padding: 20px;

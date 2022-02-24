@@ -35,7 +35,7 @@ function currentTime() {
 		"November",
 		"December",
 	]
-	let month = monthName[date.getMonth()]
+	let month = monthName[date.getMonth()]   
 
 	// Weekday values
 	let week = [
@@ -125,7 +125,7 @@ document
 	.addEventListener(
 		"click",
 		() =>
-			(document.querySelector("body").style.background =
+			(document.querySelector("body.bgc-overlay").style.background =
 				"linear-gradient(0deg, #f12711, #f5af19)"),
 		(document.querySelector("body").style.color = "#000")
 	)
@@ -135,7 +135,7 @@ document
 	.addEventListener(
 		"click",
 		() =>
-			(document.querySelector("body").style.background =
+			(document.querySelector("body.bgc-overlay").style.background =
 				"linear-gradient(#020024 0%, #090979 35%, #00d4ff 100%)"),
 		(document.querySelector("body").style.color = "#ffffff")
 	)

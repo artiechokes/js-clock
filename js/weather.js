@@ -17,20 +17,20 @@ function weatherDisplay() {
 					return response.json()
 				})
 				.then((data) => {
-					//console.log(data);
+					// console.log(data)
 					const { forecastHourly } = data.properties
 					const { city, state } = data.properties.relativeLocation.properties
 
 					document.querySelector(".city").innerHTML = `${city}, `
 					document.querySelector(".state").innerHTML = state
-					// console.log(forecastHourly);
+					// console.log(forecastHourly)
 
 					fetch(forecastHourly) //fetching weather
 						.then((res) => {
 							return res.json()
 						})
 						.then((weather) => {
-							// console.log(weather);
+							console.log(weather)
 
 							const { temperature, temperatureUnit, shortForecast, isDaytime } =
 								weather.properties.periods[0]
@@ -50,6 +50,11 @@ function weatherDisplay() {
 								document.querySelector(
 									".temperature span:first-child"
 								).innerHTML = `${celsius}&#176;`
+							}
+							if (isDaytime === true) {
+								document.body.classList.add("day-bgc")
+							} else {
+								document.body.classList.add("night-bgc")
 							}
 
 							document.querySelector(".forecast").innerHTML = shortForecast
