@@ -6,12 +6,22 @@ $white: #fff;
 $mint: #a0ecd0;
 $melon: #fec0aa;
 $overlay: rgba(0, 0, 0, 0.4);
+$overlay-gradient: linear-gradient(
+	90deg,
+	rgba(0, 0, 0, 0) 0%,
+	rgba(0, 0, 0, 0.4) 80%
+);
 $paradise: #ee4266;
 
 /* Themes */
 $night: linear-gradient(0deg, #020024 0%, #090979 35%, #00d4ff 100%);
 $day: linear-gradient(0deg, #f12711, #f5af19);
-$dayss: linear-gradient(0deg, rgb(241, 39, 17), rgb(245, 175, 25));
+$girl-power: linear-gradient(0deg, rgb(245, 29, 173), rgb(254, 255, 179));
+$stonewall: linear-gradient(0deg, rgb(32, 58, 34), rgb(159, 182, 31));
+
+:root {
+	--weather-bgc-opacity: 0;
+}
 
 @mixin centerItem {
 	left: 50%;
@@ -44,30 +54,6 @@ $dayss: linear-gradient(0deg, rgb(241, 39, 17), rgb(245, 175, 25));
 	}
 }
 
-body {
-	display: flex;
-	flex-flow: column;
-	font-family: Helvetica, Arial, sans-serif;
-	height: 100vh;
-	margin: 0;
-	max-height: 100%;
-	max-width: 100%;
-	animation-duration: 5s;
-	animation-name: load-tab;
-}
-
-.day-bgc {
-	background: $day;
-}
-
-.night-bgc {
-	background: $night;
-}
-
-b {
-	color: $new-color;
-}
-
 @keyframes navbar {
 	0% {
 		opacity: 0;
@@ -78,6 +64,50 @@ b {
 		opacity: 1;
 		transform: translateY(0%);
 	}
+}
+
+body {
+	animation-duration: 2s;
+	animation-name: load-tab;
+	display: flex;
+	flex-flow: column;
+	font-family: Helvetica, Arial, sans-serif;
+	height: 100vh;
+	margin: 0;
+	max-height: 100%;
+	max-width: 100%;
+}
+
+/*** THEMES ***/
+.bgc-day-default,
+.bgc-hot-summer {
+	background: $day;
+}
+
+.bgc-night-default,
+.bgc-cool-blue {
+	background: $night;
+}
+
+.bgc-girl-power {
+	background: $girl-power;
+	color: $black;
+}
+
+.compa {
+	background: #3eb3e9;
+}
+
+.daiquiri {
+	background: #f5689e;
+}
+
+.bgc-stonewall {
+	background: $stonewall;
+}
+
+b {
+	color: $new-color;
 }
 
 nav {
@@ -185,7 +215,6 @@ ul.menu {
 }
 
 .mini-clock {
-	animation-delay: 5s;
 	animation-duration: 2s;
 	animation-name: load-tab;
 	bottom: 0;
@@ -201,14 +230,17 @@ ul.menu {
 }
 
 .temperature-container {
+	@include flexCenter;
+
 	animation-duration: 2s;
 	animation-name: load-tab;
 	color: $white;
 	font-weight: bold;
-	padding: 5px;
+	height: 80px;
+	padding: 0 30px 0 60px;
 	position: absolute;
-	right: 20px;
-	top: 10px;
+	right: 0;
+	top: 0;
 
 	&:hover {
 		cursor: pointer;
@@ -218,6 +250,34 @@ ul.menu {
 		margin: 0;
 		text-align: right;
 	}
+
+	.temperature-details {
+		display: flex;
+		flex-direction: column;
+		padding: 0 10px;
+
+		p.temperature {
+			font-size: 30px;
+		}
+
+		p.location {
+			font-size: 16px;
+			font-weight: 500;
+		}
+	}
+}
+
+.temperature-container::before {
+	background: $overlay-gradient;
+	content: "";
+	height: 100%;
+	opacity: var(--weather-bgc-opacity);
+	position: absolute;
+	right: 0;
+	top: 0;
+	transition: 1s opacity ease-in;
+	width: 100%;
+	z-index: -1;
 }
 
 footer {
@@ -268,31 +328,78 @@ footer {
 		@include centerItem;
 		@include flexCenter;
 
-		background-color: #fff;
-		border: 1px solid rgb(66, 131, 120);
+		background-color: $white;
 		border-radius: 5px;
-		width: 150px;
+		width: 180px;
 
 		.theme-block {
-			border: 1px solid #000;
 			border-radius: 5px;
 			display: inline-block;
 			height: 25px;
 			margin: 10px 5px;
+			position: relative;
 			transition: all 0.2s ease;
 			width: 25px;
 
 			&:hover {
-				border: 2px solid rgb(150, 138, 255);
+				border: 1px solid #000;
 			}
 		}
+	}
+}
 
-		.theme-block:nth-child(1) {
-			background: $day;
-		}
+.theme-block i {
+	@include centerItem;
 
-		.theme-block:nth-child(2) {
-			background: $night;
+	color: $black;
+}
+
+@media only screen and (max-width: 900px) {
+	body {
+		color: green;
+	}
+
+	.temperature-container {
+		@include centerItem();
+
+		padding: 20px;
+		bottom: 180px;
+		width: 60vw;
+	}
+	.temperature-container::before {
+		content: "";
+		background: $overlay;
+	}
+
+	.container {
+		.clock {
+			.current-time {
+				display: block;
+				margin: 30px 0;
+				font-size: 90px;
+
+				span:nth-child(3) {
+					display: none;
+				}
+				span:nth-child(4) {
+					font-size: 30px;
+					position: absolute;
+					margin-top: 2px;
+					float: left;
+					max-width: 100px;
+				}
+			}
+			.current-date {
+				font-size: 26px;
+			}
 		}
 	}
+}
+
+.mini-clock {
+	@include centerItem;
+	top: 100px;
+	height: 80px;
+	margin: 0;
+	width: 100vw;
 }

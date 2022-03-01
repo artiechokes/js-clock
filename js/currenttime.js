@@ -35,7 +35,7 @@ function currentTime() {
 		"November",
 		"December",
 	]
-	let month = monthName[date.getMonth()]   
+	let month = monthName[date.getMonth()]
 
 	// Weekday values
 	let week = [
@@ -97,8 +97,6 @@ function divVisibility(divId) {
 		} else {
 			div.style.display = "none"
 		}
-
-		console.log(div, visibleTimeId, div.style.display)
 	}
 	if (visibleTimeId !== "clock") {
 		miniClock.style.display = "block"
@@ -120,12 +118,12 @@ document
 	.getElementById("clock-btn")
 	.addEventListener("click", () => divVisibility("clock"))
 
-document
+/**document
 	.querySelector(".theme-block:nth-child(1)")
 	.addEventListener(
 		"click",
 		() =>
-			(document.querySelector("body.bgc-overlay").style.background =
+			(document.querySelector(".bgc-overlay").style.background =
 				"linear-gradient(0deg, #f12711, #f5af19)"),
 		(document.querySelector("body").style.color = "#000")
 	)
@@ -135,7 +133,50 @@ document
 	.addEventListener(
 		"click",
 		() =>
-			(document.querySelector("body.bgc-overlay").style.background =
+			(document.querySelector(".bgc-overlay").style.background =
 				"linear-gradient(#020024 0%, #090979 35%, #00d4ff 100%)"),
 		(document.querySelector("body").style.color = "#ffffff")
 	)
+**/
+
+document
+	.querySelector(".theme-block:nth-child(1)")
+	.addEventListener("click", () => {
+		document.body.classList.replace(
+			document.body.classList[0],
+			"bgc-hot-summer"
+		)
+		document.documentElement.style.setProperty("--weather-bgc-opacity", "0")
+	})
+
+document
+	.querySelector(".theme-block:nth-child(2)")
+	.addEventListener("click", () => {
+		document.body.classList.replace(document.body.classList[0], "bgc-cool-blue")
+		document.documentElement.style.setProperty("--weather-bgc-opacity", "0")
+	})
+
+document
+	.querySelector(".theme-block:nth-child(3)")
+	.addEventListener("click", () => {
+		document.body.classList.replace(
+			document.body.classList[0],
+			"bgc-girl-power"
+		)
+		document.documentElement.style.setProperty("--weather-bgc-opacity", "1")
+	})
+
+document
+	.querySelector(".theme-block:nth-child(4)")
+	.addEventListener("click", () => {
+		document.body.classList.replace(document.body.classList[0], "bgc-stonewall")
+		document.documentElement.style.setProperty("--weather-bgc-opacity", "0")
+	})
+
+document
+	.querySelector(".theme-block:nth-child(5)")
+	.addEventListener("click", () => {
+		document.body.classList.remove(document.body.classList[0])
+		document.documentElement.style.setProperty("--weather-bgc-opacity", "0")
+		weatherDisplay() //eslint-disable-line
+	})

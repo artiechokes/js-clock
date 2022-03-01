@@ -10,9 +10,15 @@
 
 		<link rel="stylesheet" href="css/clock.css" type="text/css" />
 		<link rel="shortcut icon" href="img/favicon.ico" />
+		<link
+			rel="stylesheet"
+			href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+			integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg=="
+			crossorigin="anonymous"
+			referrerpolicy="no-referrer" />
 	</head>
 
-	<body class="bgc-overlay">
+	<body>
 		<nav>
 			<ul class="menu">
 				<li class="logo"><img src="img/clock.png" alt="clock icon" /></li>
@@ -25,13 +31,15 @@
 				</li>
 			</ul>
 			<div class="temperature-container">
-				<p class="temperature">
-					<span>0&deg</span> <span class="temp-unit">F</span>
-					<span class="forecast"></span>
-				</p>
-				<p class="location">
-					<span class="city">&nbsp;</span><span class="state">&nbsp;</span>
-				</p>
+				<div class="temperature-details">
+					<p class="temperature">
+						<span>0&deg</span> <span class="temp-unit">F</span>
+					</p>
+					<p class="location">
+						<span class="city">&nbsp;</span><span class="state">&nbsp;</span>
+					</p>
+				</div>
+				<img class="forecast" src="#" alt="" />
 			</div>
 		</nav>
 		<div class="container">
@@ -67,10 +75,13 @@
 		</div>
 		<div class="theme-container">
 			<div class="theme">
-				<div class="theme-block"></div>
-				<div class="theme-block"></div>
-				<div class="theme-block"></div>
-				<div class="theme-block"></div>
+				<div class="theme-block bgc-hot-summer"></div>
+				<div class="theme-block bgc-cool-blue"></div>
+				<div class="theme-block bgc-girl-power"></div>
+				<div class="theme-block bgc-stonewall"></div>
+				<div class="theme-block">
+					<i class="fa-solid fa-arrow-rotate-left" title="reset theme"></i>
+				</div>
 			</div>
 		</div>
 

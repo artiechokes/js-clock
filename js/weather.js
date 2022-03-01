@@ -1,15 +1,17 @@
 /* jshint esversion: 6 */
 
-var weatherInterval = setInterval(weatherDisplay, 6000)
+var weatherInterval = setInterval(weatherDisplay, 10000)
+let info; //eslint-disable-line
 
 // weather
 function weatherDisplay() {
 	if (navigator.geolocation) {
 		navigator.geolocation.getCurrentPosition((position) => {
+			/* eslint-disable no-undef */
 			longitude = position.coords.longitude
 			latitude = position.coords.latitude
 			const api = `https://api.weather.gov/points/${latitude},${longitude}`
-
+			/* eslint-enable no-undef */
 			//console.log(latitude, longitude, api);
 
 			fetch(api) //fetching weather api
@@ -31,9 +33,16 @@ function weatherDisplay() {
 						})
 						.then((weather) => {
 							console.log(weather)
+							info = weather.properties.periods[0]
 
-							const { temperature, temperatureUnit, shortForecast, isDaytime } =
-								weather.properties.periods[0]
+							const {
+								temperature,
+								temperatureUnit,
+								shortForecast,
+								isDaytime,
+								icon,
+							} = weather.properties.periods[0]
+
 							let farenheit = temperature
 							let celsius = Math.floor(((farenheit - 32) * 5) / 9)
 
@@ -51,13 +60,30 @@ function weatherDisplay() {
 									".temperature span:first-child"
 								).innerHTML = `${celsius}&#176;`
 							}
-							if (isDaytime === true) {
-								document.body.classList.add("day-bgc")
-							} else {
-								document.body.classList.add("night-bgc")
+
+							if (
+								(isDaytime === true &&
+									document.body.classList[1] === undefined) ||
+								(isDaytime === true &&
+									document.body.classList[1] === "bgc-night-default")
+							) {
+								document.body.classList.add("bgc-day-default")
+							} else if (
+								(isDaytime === false &&
+									document.body.classList[1] === undefined) ||
+								(isDaytime === false &&
+									document.body.classList[1] === "bgc-day-default")
+							) {
+								document.body.classList.add("bgc-night-default")
 							}
 
-							document.querySelector(".forecast").innerHTML = shortForecast
+							document.querySelector("img.forecast").src = icon
+							document
+								.querySelector("img.forecast")
+								.setAttribute("alt", shortForecast)
+							document
+								.querySelector("img.forecast")
+								.setAttribute("title", shortForecast)
 
 							let temperatureContainer = document.querySelector(
 								".temperature-container"
@@ -83,21 +109,23 @@ function weatherDisplay() {
 								}
 							})
 						})
+						/* eslint-disable no-console */
 						.catch((err) => {
-							console.log(`Fetch Problem(forecastHourly): ${err.message}
+							console.log(`Fetch Problem(forecastHourly): ${err.message} 
 							timestamp: ${new Date()}`)
-							console.log(new Date())
+							console.log(new Date()) // eslint-disable-line
 							clearInterval(weatherInterval)
 						})
 				})
 				.catch((err) => {
-					console.log(`Fetch Problem(API): ${err.message}
+					console.log(`Fetch Problem(API): ${err.message} 
 					Coordinates should be inside U.S.
 					Reload to Retry
 					timestamp: ${new Date()}`)
 					document.querySelector(".temperature-container").style.display =
 						"none"
 					clearInterval(weatherInterval)
+					/* eslint-enable no-console */
 				})
 		})
 	}

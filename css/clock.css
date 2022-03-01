@@ -1,4 +1,8 @@
 /* Themes */
+:root {
+  --weather-bgc-opacity: 0;
+}
+
 * {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
@@ -28,39 +32,6 @@
   }
 }
 
-body {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-flow: column;
-          flex-flow: column;
-  font-family: Helvetica, Arial, sans-serif;
-  height: 100vh;
-  margin: 0;
-  max-height: 100%;
-  max-width: 100%;
-  -webkit-animation-duration: 5s;
-          animation-duration: 5s;
-  -webkit-animation-name: load-tab;
-          animation-name: load-tab;
-}
-
-.day-bgc {
-  background: -webkit-gradient(linear, left bottom, left top, from(#f12711), to(#f5af19));
-  background: linear-gradient(0deg, #f12711, #f5af19);
-}
-
-.night-bgc {
-  background: -webkit-gradient(linear, left bottom, left top, from(#020024), color-stop(35%, #090979), to(#00d4ff));
-  background: linear-gradient(0deg, #020024 0%, #090979 35%, #00d4ff 100%);
-}
-
-b {
-  color: #bbee02;
-}
-
 @-webkit-keyframes navbar {
   0% {
     opacity: 0;
@@ -85,6 +56,61 @@ b {
     -webkit-transform: translateY(0%);
             transform: translateY(0%);
   }
+}
+
+body {
+  -webkit-animation-duration: 2s;
+          animation-duration: 2s;
+  -webkit-animation-name: load-tab;
+          animation-name: load-tab;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column;
+          flex-flow: column;
+  font-family: Helvetica, Arial, sans-serif;
+  height: 100vh;
+  margin: 0;
+  max-height: 100%;
+  max-width: 100%;
+}
+
+/*** THEMES ***/
+.bgc-day-default,
+.bgc-hot-summer {
+  background: -webkit-gradient(linear, left bottom, left top, from(#f12711), to(#f5af19));
+  background: linear-gradient(0deg, #f12711, #f5af19);
+}
+
+.bgc-night-default,
+.bgc-cool-blue {
+  background: -webkit-gradient(linear, left bottom, left top, from(#020024), color-stop(35%, #090979), to(#00d4ff));
+  background: linear-gradient(0deg, #020024 0%, #090979 35%, #00d4ff 100%);
+}
+
+.bgc-girl-power {
+  background: -webkit-gradient(linear, left bottom, left top, from(#f51dad), to(#feffb3));
+  background: linear-gradient(0deg, #f51dad, #feffb3);
+  color: #000;
+}
+
+.compa {
+  background: #3eb3e9;
+}
+
+.daiquiri {
+  background: #f5689e;
+}
+
+.bgc-stonewall {
+  background: -webkit-gradient(linear, left bottom, left top, from(#203a22), to(#9fb61f));
+  background: linear-gradient(0deg, #203a22, #9fb61f);
+}
+
+b {
+  color: #bbee02;
 }
 
 nav {
@@ -218,8 +244,6 @@ ul.menu .logo img {
 }
 
 .mini-clock {
-  -webkit-animation-delay: 5s;
-          animation-delay: 5s;
   -webkit-animation-duration: 2s;
           animation-duration: 2s;
   -webkit-animation-name: load-tab;
@@ -237,16 +261,26 @@ ul.menu .logo img {
 }
 
 .temperature-container {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   -webkit-animation-duration: 2s;
           animation-duration: 2s;
   -webkit-animation-name: load-tab;
           animation-name: load-tab;
   color: #fff;
   font-weight: bold;
-  padding: 5px;
+  height: 80px;
+  padding: 0 30px 0 60px;
   position: absolute;
-  right: 20px;
-  top: 10px;
+  right: 0;
+  top: 0;
 }
 
 .temperature-container:hover {
@@ -256,6 +290,41 @@ ul.menu .logo img {
 .temperature-container p {
   margin: 0;
   text-align: right;
+}
+
+.temperature-container .temperature-details {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  padding: 0 10px;
+}
+
+.temperature-container .temperature-details p.temperature {
+  font-size: 30px;
+}
+
+.temperature-container .temperature-details p.location {
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.temperature-container::before {
+  background: -webkit-gradient(linear, left top, right top, from(rgba(0, 0, 0, 0)), color-stop(80%, rgba(0, 0, 0, 0.4)));
+  background: linear-gradient(90deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.4) 80%);
+  content: "";
+  height: 100%;
+  opacity: var(--weather-bgc-opacity);
+  position: absolute;
+  right: 0;
+  top: 0;
+  -webkit-transition: 1s opacity ease-in;
+  transition: 1s opacity ease-in;
+  width: 100%;
+  z-index: -1;
 }
 
 footer {
@@ -320,33 +389,84 @@ footer .credits {
       -ms-flex-pack: center;
           justify-content: center;
   background-color: #fff;
-  border: 1px solid #428378;
   border-radius: 5px;
-  width: 150px;
+  width: 180px;
 }
 
 .theme-container .theme .theme-block {
-  border: 1px solid #000;
   border-radius: 5px;
   display: inline-block;
   height: 25px;
   margin: 10px 5px;
+  position: relative;
   -webkit-transition: all 0.2s ease;
   transition: all 0.2s ease;
   width: 25px;
 }
 
 .theme-container .theme .theme-block:hover {
-  border: 2px solid #968aff;
+  border: 1px solid #000;
 }
 
-.theme-container .theme .theme-block:nth-child(1) {
-  background: -webkit-gradient(linear, left bottom, left top, from(#f12711), to(#f5af19));
-  background: linear-gradient(0deg, #f12711, #f5af19);
+.theme-block i {
+  left: 50%;
+  position: absolute;
+  text-align: center;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  color: #000;
 }
 
-.theme-container .theme .theme-block:nth-child(2) {
-  background: -webkit-gradient(linear, left bottom, left top, from(#020024), color-stop(35%, #090979), to(#00d4ff));
-  background: linear-gradient(0deg, #020024 0%, #090979 35%, #00d4ff 100%);
+@media only screen and (max-width: 900px) {
+  body {
+    color: green;
+  }
+  .temperature-container {
+    left: 50%;
+    position: absolute;
+    text-align: center;
+    top: 50%;
+    -webkit-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+    padding: 20px;
+    bottom: 180px;
+    width: 60vw;
+  }
+  .temperature-container::before {
+    content: "";
+    background: rgba(0, 0, 0, 0.4);
+  }
+  .container .clock .current-time {
+    display: block;
+    margin: 30px 0;
+    font-size: 90px;
+  }
+  .container .clock .current-time span:nth-child(3) {
+    display: none;
+  }
+  .container .clock .current-time span:nth-child(4) {
+    font-size: 30px;
+    position: absolute;
+    margin-top: 2px;
+    float: left;
+    max-width: 100px;
+  }
+  .container .clock .current-date {
+    font-size: 26px;
+  }
+}
+
+.mini-clock {
+  left: 50%;
+  position: absolute;
+  text-align: center;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  top: 100px;
+  height: 80px;
+  margin: 0;
+  width: 100vw;
 }
 /*# sourceMappingURL=clock.css.map */

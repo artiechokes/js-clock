@@ -74,7 +74,7 @@
 			}
 		],
 		"font-family-no-duplicate-names": true,
-		"string-quotes": "single",
+		"string-quotes": "double",
 		"selector-max-compound-selectors": 6,
 		"function-calc-no-unspaced-operator": true,
 		"declaration-block-semicolon-newline-after": "always",
