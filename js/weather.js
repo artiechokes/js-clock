@@ -1,7 +1,7 @@
 /* jshint esversion: 6 */
 
-var weatherInterval = setInterval(weatherDisplay, 10000)
-let info; //eslint-disable-line
+var weatherInterval = setInterval(weatherDisplay, 900000)
+let info //eslint-disable-line
 
 // weather
 function weatherDisplay() {
@@ -12,7 +12,7 @@ function weatherDisplay() {
 			latitude = position.coords.latitude
 			const api = `https://api.weather.gov/points/${latitude},${longitude}`
 			/* eslint-enable no-undef */
-			//console.log(latitude, longitude, api);
+			console.log(latitude, longitude, api)
 
 			fetch(api) //fetching weather api
 				.then((response) => {
@@ -61,18 +61,22 @@ function weatherDisplay() {
 								).innerHTML = `${celsius}&#176;`
 							}
 
+							if (document.body.classList[0] === "bgc-no-weather") {
+								document.body.classList.remove === "bgc-no-weather"
+							}
+
 							if (
 								(isDaytime === true &&
-									document.body.classList[1] === undefined) ||
+									document.body.classList[0] === undefined) ||
 								(isDaytime === true &&
-									document.body.classList[1] === "bgc-night-default")
+									document.body.classList[0] === "bgc-night-default")
 							) {
 								document.body.classList.add("bgc-day-default")
 							} else if (
 								(isDaytime === false &&
-									document.body.classList[1] === undefined) ||
+									document.body.classList[0] === undefined) ||
 								(isDaytime === false &&
-									document.body.classList[1] === "bgc-day-default")
+									document.body.classList[0] === "bgc-day-default")
 							) {
 								document.body.classList.add("bgc-night-default")
 							}
@@ -124,6 +128,7 @@ function weatherDisplay() {
 					timestamp: ${new Date()}`)
 					document.querySelector(".temperature-container").style.display =
 						"none"
+					document.body.classList.add("bgc-no-weather")
 					clearInterval(weatherInterval)
 					/* eslint-enable no-console */
 				})

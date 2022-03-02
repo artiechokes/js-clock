@@ -18,6 +18,7 @@ $night: linear-gradient(0deg, #020024 0%, #090979 35%, #00d4ff 100%);
 $day: linear-gradient(0deg, #f12711, #f5af19);
 $girl-power: linear-gradient(0deg, rgb(245, 29, 173), rgb(254, 255, 179));
 $stonewall: linear-gradient(0deg, rgb(32, 58, 34), rgb(159, 182, 31));
+$bw-gradient: linear-gradient(0deg, rgb(24, 24, 24), rgb(175, 175, 174));
 
 :root {
 	--weather-bgc-opacity: 0;
@@ -94,16 +95,13 @@ body {
 	color: $black;
 }
 
-.compa {
-	background: #3eb3e9;
-}
-
-.daiquiri {
-	background: #f5689e;
-}
-
 .bgc-stonewall {
 	background: $stonewall;
+}
+
+.bgc-no-weather {
+	background: $bw-gradient;
+	color: $white;
 }
 
 b {
@@ -360,46 +358,46 @@ footer {
 	}
 
 	.temperature-container {
-		@include centerItem();
+		@include centerItem;
 
-		padding: 20px;
 		bottom: 180px;
+		padding: 20px;
 		width: 60vw;
 	}
 	.temperature-container::before {
-		content: "";
 		background: $overlay;
+		content: "";
 	}
 
-	.container {
-		.clock {
-			.current-time {
-				display: block;
-				margin: 30px 0;
-				font-size: 90px;
+	.clock {
+		.current-time {
+			display: block;
+			font-size: 90px;
+			margin: 30px 0;
 
-				span:nth-child(3) {
-					display: none;
-				}
-				span:nth-child(4) {
-					font-size: 30px;
-					position: absolute;
-					margin-top: 2px;
-					float: left;
-					max-width: 100px;
-				}
+			span:nth-child(3) {
+				display: none;
 			}
-			.current-date {
-				font-size: 26px;
+
+			span:nth-child(4) {
+				float: left;
+				font-size: 30px;
+				margin-top: 2px;
+				max-width: 100px;
+				position: absolute;
 			}
 		}
+		.current-date {
+			font-size: 26px;
+		}
 	}
-}
 
-.mini-clock {
-	@include centerItem;
-	top: 100px;
-	height: 80px;
-	margin: 0;
-	width: 100vw;
+	.mini-clock {
+		@include centerItem;
+
+		height: 80px;
+		margin: 0;
+		top: 100px;
+		width: 100vw;
+	}
 }

@@ -96,17 +96,15 @@ body {
   color: #000;
 }
 
-.compa {
-  background: #3eb3e9;
-}
-
-.daiquiri {
-  background: #f5689e;
-}
-
 .bgc-stonewall {
   background: -webkit-gradient(linear, left bottom, left top, from(#203a22), to(#9fb61f));
   background: linear-gradient(0deg, #203a22, #9fb61f);
+}
+
+.bgc-no-weather {
+  background: -webkit-gradient(linear, left bottom, left top, from(#181818), to(#afafae));
+  background: linear-gradient(0deg, #181818, #afafae);
+  color: #fff;
 }
 
 b {
@@ -429,44 +427,43 @@ footer .credits {
     top: 50%;
     -webkit-transform: translate(-50%, -50%);
             transform: translate(-50%, -50%);
-    padding: 20px;
     bottom: 180px;
+    padding: 20px;
     width: 60vw;
   }
   .temperature-container::before {
-    content: "";
     background: rgba(0, 0, 0, 0.4);
+    content: "";
   }
-  .container .clock .current-time {
+  .clock .current-time {
     display: block;
-    margin: 30px 0;
     font-size: 90px;
+    margin: 30px 0;
   }
-  .container .clock .current-time span:nth-child(3) {
+  .clock .current-time span:nth-child(3) {
     display: none;
   }
-  .container .clock .current-time span:nth-child(4) {
-    font-size: 30px;
-    position: absolute;
-    margin-top: 2px;
+  .clock .current-time span:nth-child(4) {
     float: left;
+    font-size: 30px;
+    margin-top: 2px;
     max-width: 100px;
+    position: absolute;
   }
-  .container .clock .current-date {
+  .clock .current-date {
     font-size: 26px;
   }
-}
-
-.mini-clock {
-  left: 50%;
-  position: absolute;
-  text-align: center;
-  top: 50%;
-  -webkit-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%);
-  top: 100px;
-  height: 80px;
-  margin: 0;
-  width: 100vw;
+  .mini-clock {
+    left: 50%;
+    position: absolute;
+    text-align: center;
+    top: 50%;
+    -webkit-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+    height: 80px;
+    margin: 0;
+    top: 100px;
+    width: 100vw;
+  }
 }
 /*# sourceMappingURL=clock.css.map */

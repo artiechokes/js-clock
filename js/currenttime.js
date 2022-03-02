@@ -179,4 +179,5 @@ document
 		document.body.classList.remove(document.body.classList[0])
 		document.documentElement.style.setProperty("--weather-bgc-opacity", "0")
 		weatherDisplay() //eslint-disable-line
+		weatherInterval = setInterval(weatherDisplay, 900000) //eslint-disable-line
 	})
