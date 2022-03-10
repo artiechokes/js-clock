@@ -181,3 +181,4 @@ document
 		weatherDisplay() //eslint-disable-line
 		weatherInterval = setInterval(weatherDisplay, 900000) //eslint-disable-line
 	})
+

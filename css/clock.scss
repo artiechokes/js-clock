@@ -145,6 +145,7 @@ ul.menu {
 		position: relative;
 
 		img {
+			filter: invert(100%);
 			left: 50%;
 			position: absolute;
 			top: 50%;
@@ -354,7 +355,7 @@ footer {
 
 @media only screen and (max-width: 900px) {
 	body {
-		color: green;
+		color: yellow;
 	}
 
 	.temperature-container {
@@ -400,4 +401,12 @@ footer {
 		top: 100px;
 		width: 100vw;
 	}
+}
+
+.min-list-item {
+
+}
+
+.min-logo img {
+	width: 10vw;
 }
