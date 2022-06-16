@@ -35,6 +35,7 @@ function currentTime() {
 		"November",
 		"December",
 	]
+
 	let month = monthName[date.getMonth()]
 
 	// Weekday values
@@ -181,4 +182,3 @@ document
 		weatherDisplay() //eslint-disable-line
 		weatherInterval = setInterval(weatherDisplay, 900000) //eslint-disable-line
 	})
-

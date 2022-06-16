@@ -1,0 +1,68 @@
+$guide: #f00;
+$selected: #555;
+$new-color: #bbee02;
+$black: #000;
+$white: #fff;
+$mint: #a0ecd0;
+$melon: #fec0aa;
+$overlay: rgba(0, 0, 0, 0.4);
+$overlay-gradient: linear-gradient(
+	90deg,
+	rgba(0, 0, 0, 0) 0%,
+	rgba(0, 0, 0, 0.4) 80%
+);
+$paradise: #ee4266;
+
+/* Themes */
+$night: linear-gradient(0deg, #020024 0%, #090979 35%, #00d4ff 100%);
+$day: linear-gradient(0deg, #f12711, #f5af19);
+$girl-power: linear-gradient(0deg, rgb(245, 29, 173), rgb(254, 255, 179));
+$stonewall: linear-gradient(0deg, rgb(32, 58, 34), rgb(159, 182, 31));
+$bw-gradient: linear-gradient(0deg, rgb(24, 24, 24), rgb(175, 175, 174));
+
+:root {
+	--weather-bgc-opacity: 0;
+}
+
+@mixin centerItem {
+	left: 50%;
+	position: absolute;
+	text-align: center;
+	top: 50%;
+	transform: translate(-50%, -50%);
+}
+@mixin flexCenter {
+	align-items: center;
+	display: flex;
+	justify-content: center;
+}
+
+* {
+	box-sizing: border-box;
+}
+
+@keyframes load-tab {
+	0% {
+		opacity: 0;
+	}
+
+	45% {
+		opacity: 0;
+	}
+
+	100% {
+		opacity: 1;
+	}
+}
+
+@keyframes navbar {
+	0% {
+		opacity: 0;
+		transform: translateY(-25%);
+	}
+
+	100% {
+		opacity: 1;
+		transform: translateY(0%);
+	}
+}

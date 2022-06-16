@@ -1,71 +1,4 @@
-$guide: #f00;
-$selected: #555;
-$new-color: #bbee02;
-$black: #000;
-$white: #fff;
-$mint: #a0ecd0;
-$melon: #fec0aa;
-$overlay: rgba(0, 0, 0, 0.4);
-$overlay-gradient: linear-gradient(
-	90deg,
-	rgba(0, 0, 0, 0) 0%,
-	rgba(0, 0, 0, 0.4) 80%
-);
-$paradise: #ee4266;
-
-/* Themes */
-$night: linear-gradient(0deg, #020024 0%, #090979 35%, #00d4ff 100%);
-$day: linear-gradient(0deg, #f12711, #f5af19);
-$girl-power: linear-gradient(0deg, rgb(245, 29, 173), rgb(254, 255, 179));
-$stonewall: linear-gradient(0deg, rgb(32, 58, 34), rgb(159, 182, 31));
-$bw-gradient: linear-gradient(0deg, rgb(24, 24, 24), rgb(175, 175, 174));
-
-:root {
-	--weather-bgc-opacity: 0;
-}
-
-@mixin centerItem {
-	left: 50%;
-	position: absolute;
-	text-align: center;
-	top: 50%;
-	transform: translate(-50%, -50%);
-}
-@mixin flexCenter {
-	align-items: center;
-	display: flex;
-	justify-content: center;
-}
-
-* {
-	box-sizing: border-box;
-}
-
-@keyframes load-tab {
-	0% {
-		opacity: 0;
-	}
-
-	45% {
-		opacity: 0;
-	}
-
-	100% {
-		opacity: 1;
-	}
-}
-
-@keyframes navbar {
-	0% {
-		opacity: 0;
-		transform: translateY(-25%);
-	}
-
-	100% {
-		opacity: 1;
-		transform: translateY(0%);
-	}
-}
+@import "vars";
 
 body {
 	animation-duration: 2s;
@@ -117,6 +50,7 @@ nav {
 	max-width: 100%;
 	position: relative;
 	width: 100vw;
+	border: 1px solid blue;
 }
 
 ul.menu {
@@ -124,20 +58,6 @@ ul.menu {
 	margin: auto;
 	margin-inline-end: 0;
 	padding-inline-start: 0;
-
-	.list-item {
-		// border-bottom: 3px solid $selected;
-		display: inline-block;
-		margin: 0;
-		padding: 30px;
-		text-transform: uppercase;
-		transition: background 0.3s ease;
-
-		&:hover {
-			background: $black;
-			color: $white;
-		}
-	}
 
 	.logo {
 		border: 0;
@@ -152,6 +72,20 @@ ul.menu {
 			transform: translate(-50%, -50%);
 			width: 30px;
 		}
+	}
+}
+
+.list-item {
+	// border-bottom: 3px solid $selected;
+	display: inline-block;
+	margin: 0;
+	padding: 30px;
+	text-transform: uppercase;
+	transition: background 0.3s ease;
+
+	&:hover {
+		background: $black;
+		color: $white;
 	}
 }
 
@@ -353,60 +287,8 @@ footer {
 	color: $black;
 }
 
-@media only screen and (max-width: 900px) {
-	body {
-		color: yellow;
-	}
-
-	.temperature-container {
-		@include centerItem;
-
-		bottom: 180px;
-		padding: 20px;
-		width: 60vw;
-	}
-	.temperature-container::before {
-		background: $overlay;
-		content: "";
-	}
-
-	.clock {
-		.current-time {
-			display: block;
-			font-size: 90px;
-			margin: 30px 0;
-
-			span:nth-child(3) {
-				display: none;
-			}
-
-			span:nth-child(4) {
-				float: left;
-				font-size: 30px;
-				margin-top: 2px;
-				max-width: 100px;
-				position: absolute;
-			}
-		}
-		.current-date {
-			font-size: 26px;
-		}
-	}
-
-	.mini-clock {
-		@include centerItem;
-
-		height: 80px;
-		margin: 0;
-		top: 100px;
-		width: 100vw;
-	}
+.min-menu {
+	display: none;
 }
 
-.min-list-item {
-
-}
-
-.min-logo img {
-	width: 10vw;
-}
+@import "clock-res";

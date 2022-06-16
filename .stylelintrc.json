@@ -71,8 +71,8 @@
 			true,
 			{
 				"ignoreUnits": ["/^[-+][\\d$(]/"]
-			}
-		],
+			}  
+	],
 		"font-family-no-duplicate-names": true,
 		"string-quotes": "double",
 		"selector-max-compound-selectors": 6,
@@ -90,3 +90,4 @@
 		"alpha-value-notation": null
 	}
 }
+   

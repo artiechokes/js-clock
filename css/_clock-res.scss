@@ -1,0 +1,96 @@
+@media only screen and (max-width: 900px) {
+	body {
+	}
+
+	ul.menu {
+		display: none;
+	}
+
+	.temperature-container {
+		@include centerItem;
+
+		bottom: 180px;
+		padding: 20px;
+		position: absolute;
+		top: 200px;
+		width: 60vw;
+	}
+	.temperature-container::before {
+		background: $overlay;
+		content: "";
+	}
+
+	.clock {
+		.current-time {
+			display: block;
+			font-size: 90px;
+			margin: 30px 0;
+
+			span:nth-child(3) {
+				display: none;
+			}
+
+			span:nth-child(4) {
+				float: left;
+				font-size: 30px;
+				margin-top: 2px;
+				max-width: 100px;
+				position: absolute;
+			}
+		}
+		.current-date {
+			font-size: 26px;
+		}
+	}
+
+	.mini-clock {
+		@include centerItem;
+
+		bottom: 0;
+		font-size: 16px;
+		height: 80px;
+		margin: 0;
+		top: auto;
+		width: 100vw;
+	}
+
+	.min-menu {
+		display: flex;
+		margin: auto;
+		margin-inline-end: 0;
+		padding-inline-start: 0;
+
+		.list-item {
+			font-size: 24px;
+			margin: auto;
+			padding: 5px;
+			background-color: aqua;
+
+			&:nth-child(2) {
+				order: 1;
+			}
+			&:nth-child(3) {
+				order: 2;
+			}
+			&:nth-child(4) {
+				order: 4;
+			}
+			&:nth-child(5) {
+				order: 5;
+			}
+		}
+
+		.min-logo {
+			left: 50%;
+			margin: auto;
+			padding: 15px;
+			order: 3;
+			background-color: black;
+
+			img {
+				filter: invert(100%);
+				width: 50px;
+			}
+		}
+	}
+}
