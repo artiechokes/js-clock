@@ -1,4 +1,4 @@
-@media only screen and (max-width: 900px) {
+@media only screen and (max-width: 960px) {
 	body {
 	}
 
@@ -7,13 +7,12 @@
 	}
 
 	.temperature-container {
-		@include centerItem;
-
 		bottom: 180px;
+		justify-content: right;
 		padding: 20px;
 		position: absolute;
-		top: 200px;
-		width: 60vw;
+		right: 20px;
+		top: 100px;
 	}
 	.temperature-container::before {
 		background: $overlay;
@@ -61,36 +60,45 @@
 		padding-inline-start: 0;
 
 		.list-item {
-			font-size: 24px;
-			margin: auto;
-			padding: 5px;
-			background-color: aqua;
+			background-color: hsl(231, 49%, 31%);
+			color: $white;
+			font-size: 30px;
+			height: 80px;
+			margin: 0;
+			padding: 20px 15px;
+			position: relative;
+			width: 100%;
+			border-left: 0.5px solid rgb(20, 24, 90);
 
-			&:nth-child(2) {
-				order: 1;
+			&:hover {
+				background-color: rgb(0, 4, 66);
 			}
-			&:nth-child(3) {
-				order: 2;
-			}
-			&:nth-child(4) {
-				order: 4;
-			}
-			&:nth-child(5) {
-				order: 5;
+
+			i {
+				left: 50%;
+				position: absolute;
+				top: 50%;
+				transform: translate(-50%, -50%);
 			}
 		}
+	}
+	.theme-container {
+		left: 0;
+		position: absolute;
+		top: 50%;
+		transform: translateY(calc(-50% - 90px));
 
-		.min-logo {
-			left: 50%;
-			margin: auto;
-			padding: 15px;
-			order: 3;
-			background-color: black;
-
-			img {
-				filter: invert(100%);
-				width: 50px;
-			}
+		.theme {
+			border-bottom-left-radius: 0;
+			border-top-left-radius: 0;
+			flex-direction: column;
+			top: 0;
+			transform: translate(0, 0);
+			width: auto;
 		}
+
+	/*	.theme-block {
+			// transform: rotate(-90deg);
+		}*/
 	}
 }

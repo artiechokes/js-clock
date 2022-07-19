@@ -107,16 +107,29 @@ function divVisibility(divId) {
 }
 
 document
-	.getElementById("timer-btn")
+	.querySelectorAll(".timer-btn")[0]
 	.addEventListener("click", () => divVisibility("timer"))
 document
-	.getElementById("alarm-btn")
+	.querySelectorAll(".alarm-btn")[0]
 	.addEventListener("click", () => divVisibility("alarm"))
 document
-	.getElementById("stopwatch-btn")
+	.querySelectorAll(".stopwatch-btn")[0]
 	.addEventListener("click", () => divVisibility("stopwatch"))
 document
-	.getElementById("clock-btn")
+	.querySelectorAll(".clock-btn")[0]
+	.addEventListener("click", () => divVisibility("clock"))
+
+document
+	.querySelectorAll(".timer-btn")[1]
+	.addEventListener("click", () => divVisibility("timer"))
+document
+	.querySelectorAll(".alarm-btn")[1]
+	.addEventListener("click", () => divVisibility("alarm"))
+document
+	.querySelectorAll(".stopwatch-btn")[1]
+	.addEventListener("click", () => divVisibility("stopwatch"))
+document
+	.querySelectorAll(".clock-btn")[1]
 	.addEventListener("click", () => divVisibility("clock"))
 
 /**document

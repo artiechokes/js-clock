@@ -45,12 +45,10 @@ nav {
 	animation-duration: 1s;
 	animation-name: navbar;
 	animation-timing-function: ease-in-out;
-	height: 80px;
 	margin: auto;
 	max-width: 100%;
 	position: relative;
 	width: 100vw;
-	border: 1px solid blue;
 }
 
 ul.menu {
@@ -120,14 +118,9 @@ ul.menu {
 	width: 100vw;
 
 	.clock {
-		animation-duration: 4s;
+		@include centerItem animation-duration: 4s;
 		animation-name: load-tab;
-		bottom: 50%;
 		color: $white;
-		position: absolute;
-		right: 50%;
-		text-align: center;
-		transform: translate(50%, 50%);
 		width: 100%;
 
 		.current-time {
@@ -229,6 +222,7 @@ footer {
 }
 
 .timer {
+	@include centerItem;
 	display: none;
 
 	.input {
@@ -245,10 +239,12 @@ footer {
 }
 
 .alarm {
+	@include centerItem;
 	display: none;
 }
 
 .stopwatch {
+	@include centerItem;
 	display: none;
 }
 

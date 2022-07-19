@@ -115,14 +115,14 @@ function weatherDisplay() {
 						})
 						/* eslint-disable no-console */
 						.catch((err) => {
-							console.log(`Fetch Problem(forecastHourly): ${err.message} 
+							console.log(`Fetch Problem(forecastHourly): ${err.message}
 							timestamp: ${new Date()}`)
 							console.log(new Date()) // eslint-disable-line
 							clearInterval(weatherInterval)
 						})
 				})
 				.catch((err) => {
-					console.log(`Fetch Problem(API): ${err.message} 
+					console.log(`Fetch Problem(API): ${err.message}
 					Coordinates should be inside U.S.
 					Reload to Retry
 					timestamp: ${new Date()}`)
