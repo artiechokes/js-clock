@@ -80,8 +80,8 @@ body {
 /*** THEMES ***/
 .bgc-day-default,
 .bgc-hot-summer {
-  background: -webkit-gradient(linear, left bottom, left top, from(#f12711), to(#f5af19));
-  background: linear-gradient(0deg, #f12711, #f5af19);
+  background: -webkit-gradient(linear, left bottom, left top, from(#ff5e00), to(#ffef00));
+  background: linear-gradient(0deg, #ff5e00, #ffef00);
 }
 
 .bgc-night-default,
@@ -142,8 +142,6 @@ ul.menu .logo {
 }
 
 ul.menu .logo img {
-  -webkit-filter: invert(100%);
-          filter: invert(100%);
   left: 50%;
   position: absolute;
   top: 50%;
@@ -456,6 +454,7 @@ footer .credits {
   .temperature-container::before {
     background: rgba(0, 0, 0, 0.4);
     content: "";
+    width: 220px;
   }
   .clock .current-time {
     display: block;
@@ -486,8 +485,12 @@ footer .credits {
     font-size: 16px;
     height: 80px;
     margin: 0;
+    margin-bottom: 40px;
     top: auto;
     width: 100vw;
+  }
+  .min-menu > .min-list-item.list-item {
+    background: #4f617d;
   }
   .min-menu {
     display: -webkit-box;
@@ -500,7 +503,7 @@ footer .credits {
             padding-inline-start: 0;
   }
   .min-menu .list-item {
-    background-color: #283476;
+    background-color: none;
     color: #fff;
     font-size: 30px;
     height: 80px;
@@ -508,10 +511,10 @@ footer .credits {
     padding: 20px 15px;
     position: relative;
     width: 100%;
-    border-left: 0.5px solid #14185a;
+    border-left: 1px solid #ffffff;
   }
   .min-menu .list-item:hover {
-    background-color: #000442;
+    background-color: #242868;
   }
   .min-menu .list-item i {
     left: 50%;
@@ -520,24 +523,34 @@ footer .credits {
     -webkit-transform: translate(-50%, -50%);
             transform: translate(-50%, -50%);
   }
+  .min-menu .list-item:nth-child(1) {
+    border: none;
+  }
   .theme-container {
-    left: 0;
+    height: 45px;
     position: absolute;
-    top: 50%;
-    -webkit-transform: translateY(calc(-50% - 90px));
-            transform: translateY(calc(-50% - 90px));
+    bottom: 0;
+    width: 100vw;
   }
   .theme-container .theme {
-    border-bottom-left-radius: 0;
-    border-top-left-radius: 0;
-    -webkit-box-orient: vertical;
+    border-radius: 10px 10px 0 0;
+    -webkit-box-orient: horizontal;
     -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-    top: 0;
-    -webkit-transform: translate(0, 0);
-            transform: translate(0, 0);
+        -ms-flex-direction: row;
+            flex-direction: row;
     width: auto;
+    top: 0;
+    -webkit-transform: translate(0);
+            transform: translate(0);
+    left: 0;
+    width: 100vw;
   }
+  .theme-container .theme-block {
+    margin: 15px 10px;
+  }
+}
+
+footer {
+  margin-bottom: 40px;
 }
 /*# sourceMappingURL=clock.css.map */

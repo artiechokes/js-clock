@@ -82,21 +82,31 @@ function currentTime() {
 
 //Menu Selection
 var timeMenuDiv = ["clock", "timer", "stopwatch", "alarm"]
+var timeMenuItem = [
+	".min-menu .clock-btn",
+	".min-menu .timer-btn",
+	".min-menu .stopwatch-btn",
+	".min-menu .alarm-btn",
+]
+
 var visibleTimeId = null
 const miniClock = document.getElementById("mini-clock")
 
 function divVisibility(divId) {
 	visibleTimeId = divId
-	let i, div
+	let i, div, menuItem
 
 	for (i = 0; i < timeMenuDiv.length; i++) {
 		div = document.getElementById(timeMenuDiv[i])
+		menuItem = document.querySelector(timeMenuItem[i])
 
 		if (visibleTimeId === timeMenuDiv[i]) {
 			div.style.display = "block"
 			div.style.animationDuration = "1s"
+			menuItem.classList.remove("min-list-item")
 		} else {
 			div.style.display = "none"
+			menuItem.classList.add("min-list-item")
 		}
 	}
 	if (visibleTimeId !== "clock") {
